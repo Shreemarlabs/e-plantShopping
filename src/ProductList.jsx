@@ -228,10 +228,14 @@ function ProductList({ onHomeClick }) {
         alignItems: 'center',
         width: '1100px',
     }
-    const styleA = {
+    const styleA = {    
         color: 'white',
         fontSize: '30px',
         textDecoration: 'none',
+    }
+
+    const calculateTotalQuantity = () => {
+        return CartItems? CartItems.reduce((total,item) => total + item.quantity, 0) : 0;
     }
 
     const handleHomeClick = (e) => {
